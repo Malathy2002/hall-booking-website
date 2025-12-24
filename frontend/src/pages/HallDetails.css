@@ -604,9 +604,9 @@
     background: #e5e7eb;
     outline: none;
     -webkit-appearance: none;
+    appearance: none;
     margin: 20px 0;
   }
-  
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 24px;
