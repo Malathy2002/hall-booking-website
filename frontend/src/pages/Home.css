@@ -1,0 +1,538 @@
+/* Home.css - Updated for Clickable Categories */
+
+.home-container {
+    min-height: 100vh;
+    background: #f8fafc;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    color: white;
+  }
+  
+  .hero-overlay {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Search Form */
+  .search-form {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    align-items: end;
+  }
+  
+  .form-group {
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4a5568;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #2d3748;
+    background: white;
+    transition: border-color 0.3s;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #667eea;
+  }
+  
+  .form-input::placeholder {
+    color: #a0aec0;
+  }
+  
+  .search-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+  }
+  
+  .search-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  }
+  
+  .search-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Popular Searches */
+  .popular-searches {
+    margin-top: 40px;
+  }
+  
+  .popular-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+  
+  .search-tags {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .search-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .search-tag:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Categories Section - UPDATED */
+  .categories-section {
+    padding: 80px 0;
+    background: white;
+  }
+  
+  .categories-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: #718096;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .category-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-10px);
+    border-color: #667eea;
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+  }
+  
+  .category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .category-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover .category-icon {
+    transform: scale(1.1);
+  }
+  
+  .category-card h3 {
+    color: #2d3748;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  
+  .count {
+    font-size: 1.3rem;
+    color: #667eea;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .desc {
+    color: #718096;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    min-height: 40px;
+  }
+  
+  .category-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .click-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #667eea;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: gap 0.3s ease;
+  }
+  
+  .category-card:hover .click-hint {
+    gap: 12px;
+  }
+  
+  /* Locations Section */
+  .locations-section {
+    padding: 80px 0;
+    background: #f8fafc;
+  }
+  
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .location-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .location-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .location-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  
+  .location-card:hover .location-image img {
+    transform: scale(1.05);
+  }
+  
+  .location-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .location-info {
+    padding: 20px;
+  }
+  
+  .location-info h3 {
+    color: #2d3748;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+  }
+  
+  .location-info p {
+    color: #718096;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+  }
+  
+  .view-btn {
+    padding: 8px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .view-btn:hover {
+    background: #764ba2;
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 80px 0;
+    background: white;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .feature-card {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+  }
+  
+  .feature-card h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+  
+  .feature-card p {
+    color: #718096;
+    line-height: 1.6;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+  }
+  
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-btn {
+    padding: 15px 40px;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .form-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .hero-content h1 {
+      font-size: 2.8rem;
+    }
+    
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 40px 15px;
+    }
+    
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .search-form {
+      padding: 20px;
+    }
+    
+    .search-tags {
+      gap: 10px;
+    }
+    
+    .search-tag {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+    
+    .categories-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .categories-section,
+    .locations-section,
+    .features-section,
+    .cta-section {
+      padding: 40px 0;
+    }
+    
+    .categories-section h2,
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+    
+    .category-card {
+      padding: 25px;
+    }
+    
+    .category-card h3 {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Animation for category cards */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .category-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+  }
+  
+  .category-card:nth-child(1) { animation-delay: 0.1s; }
+  .category-card:nth-child(2) { animation-delay: 0.2s; }
+  .category-card:nth-child(3) { animation-delay: 0.3s; }
+  .category-card:nth-child(4) { animation-delay: 0.4s; }
+  .category-card:nth-child(5) { animation-delay: 0.5s; }
+  .category-card:nth-child(6) { animation-delay: 0.6s; }
