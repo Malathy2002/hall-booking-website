@@ -15,8 +15,13 @@
     "node": "18.x",
     "npm": "9.x"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "hall-booking",
+    "booking-system",
+    "nodejs",
+    "express"
+  ],
+  "author": "Your Name",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -33,11 +38,8 @@
     "mongoose": "^9.0.2",
     "morgan": "^1.10.1",
     "multer": "^2.0.2",
-    "mysql2": "^3.16.0",
     "nodemailer": "^7.0.12",
-    "razorpay": "^2.9.6",
-    "sequelize": "^6.37.7",
-    "sequelize-cli": "^6.6.3"
+    "razorpay": "^2.9.6"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

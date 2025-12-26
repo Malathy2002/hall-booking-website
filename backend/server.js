@@ -1,6 +1,6 @@
-﻿const express = require("express");
-const cors = require("cors");
-const path = require("path");
+﻿const express = require('express');
+const cors = require('cors');
+const path = require('path');
 const app = express();
 
 // Get the directory name
@@ -375,7 +375,7 @@ app.get('/api/halls/:id', (req, res) => {
   res.json({ success: true, data: hall });
 });
 
-// ✅ UPDATE hall endpoint
+// UPDATE hall endpoint
 app.put('/api/halls/:id', (req, res) => {
   const hallId = parseInt(req.params.id);
   if (isNaN(hallId)) {
@@ -413,7 +413,7 @@ app.put('/api/halls/:id', (req, res) => {
   });
 });
 
-// ✅ CREATE new hall endpoint
+// CREATE new hall endpoint
 app.post('/api/halls', (req, res) => {
   const newHall = req.body;
   
@@ -452,7 +452,7 @@ app.post('/api/halls', (req, res) => {
   });
 });
 
-// ✅ DELETE hall endpoint
+// DELETE hall endpoint
 app.delete('/api/halls/:id', (req, res) => {
   const hallId = parseInt(req.params.id);
   if (isNaN(hallId)) {
